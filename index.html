@@ -1,0 +1,71 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/web.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row" style="padding-top: 10rem;">
+        <h2 class="text-center"><strong>Search something</strong></h2>
+      </div>
+      <div class="row" style="padding-top: 4rem;">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" id="search-input">
+            <span class="input-group-btn">
+              <button class="btn btn-primary" type="button" id="btn-search">
+                <span class="glyphicon glyphicon-search"></span>Go
+              </button>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+    <div class="row" style="padding-top: 4rem;">
+      <h3 class="text-center"><strong>Searching result</strong></h3>
+    </div>
+    <div id="meal">
+
+    </div>
+    <div class="container-fluid" style="padding-top: 3rem;">
+      <div class="meal-wrapper">
+        <div id="ongrid">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="DesModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-header">
+
+        </div>
+      </div>
+      <script src="js/jquery-1.12.4.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <!-- <script src="/js/script.js"></script> -->
+      <script src="./js/test.js"></script>
+</body>
+
+</html>
