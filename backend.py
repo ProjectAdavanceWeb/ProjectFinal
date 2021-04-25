@@ -14,11 +14,11 @@ app.config['SESSION_TYPE'] = 'filesystem'
 
 @app.route("/Car", methods=['GET','POST','PUT'])
 def get_allCar():
-    char = db.car #เป็นเหมือนการนำค่าชื่อหัวตารางมาใส่ในตัวแปร char
+    char = db.customer #เป็นเหมือนการนำค่าชื่อหัวตารางมาใส่ในตัวแปร char
     output = []
     for x in char.find(): #ทำตามฟังชั่น
-        output.append({'_id' : x['_id'],'_name' : x['_name'],'_model' : x['_model'],
-                        '_price' : x['_price']}) #เอาค่าในตารางมาอ่านแล้วใส่ไปใน output เป็นเหมือนค่าอาเร
+        output.append({'_id' : x['_id'],'username' : x['username'],'email' : x['email'],
+                        'password' : x['password']}) #เอาค่าในตารางมาอ่านแล้วใส่ไปใน output เป็นเหมือนค่าอาเร
     return json_util.dumps(output) #หลังจากทำเงื่อนไขเสร็จส่งค่ากลับไปที่ output
 
 @app.route("/")
