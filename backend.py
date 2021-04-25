@@ -38,6 +38,13 @@ def admincontact():
         ses =  'You are logged in as ' + session['email']
     return render_template("AdminContact.html",ses=ses , emp_list = emp_list)
 
+@app.route("/admincustomer")
+def admincustomer():
+    emp_list = db.customer.find()
+    if 'email' in session:
+        ses =  'You are logged in as ' + session['email']
+    return render_template("AdminCustomer.html",ses=ses , emp_list = emp_list)
+
 
 @app.route("/menu")
 def menu():
