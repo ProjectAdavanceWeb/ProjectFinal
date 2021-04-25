@@ -31,6 +31,14 @@ def contact():
         ses =  'You are logged in as ' + session['email']
     return render_template("contact.html",ses=ses)
 
+@app.route("/admincontact")
+def admincontact():
+    emp_list = db.contact.find()
+    if 'email' in session:
+        ses =  'You are logged in as ' + session['email']
+    return render_template("AdminContact.html",ses=ses , emp_list = emp_list)
+
+
 @app.route("/menu")
 def menu():
     if 'email' in session:
