@@ -1,0 +1,117 @@
+.signup {
+  margin-bottom: 150px;
+}
+section {
+  display: block;
+}
+@media screen and (max-width: 1200px) {
+  /* Styles */
+}
+.container {
+  width: calc(100% - 30px);
+  max-width: 100%;
+}
+.container {
+  background: #fff;
+  margin: 0 auto;
+  box-shadow: 0 15px 16.83px 0.17px rgb(0 0 0 / 5%);
+  -moz-box-shadow: 0 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 15px 16.83px 0.17px rgb(0 0 0 / 5%);
+  -o-box-shadow: 0 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+  -ms-box-shadow: 0 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -o-border-radius: 20px;
+  -ms-border-radius: 20px;
+  width: 60%;
+}
+.signup-content {
+  padding: 75px 0;
+}
+.signup-form {
+  margin-left: 75px;
+  margin-right: 75px;
+}
+.signup-form,
+.signup-image,
+.signin-form,
+.signin-image {
+  width: 60%;
+  overflow: hidden;
+}
+.form-group {
+  position: relative;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+input[type="text"] {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+input[type="password"] {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.inner-addon {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon {
+  left: 0px;
+}
+.right-addon .glyphicon {
+  right: 0px;
+}
+
+/* add padding  */
+.left-addon input {
+  padding-left: 40px;
+}
+.right-addon input {
+  padding-right: 30px;
+}
+.signup-image {
+  margin: 0 55px;
+}
+
+body {
+  background: url("../519.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.btn-border-radius {
+  border-radius: 8px;
+}
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+  background-color: #f21170 !important;
+  border: #f21170 !important;
+}
+.header {
+  margin-top: 60px;
+}

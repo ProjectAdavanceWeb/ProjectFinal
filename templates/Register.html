@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/reg.css" rel="stylesheet" />
+    {% include 'MainCSJS.html' %}
+  </head>
+
+  <body>
+    <section class="signup" style="margin-top: 50px">
+      <div class="container">
+        <div class="inline-block">
+          <h1 class="text-center header" style="font-weight: bold">Register</h1>
+          <div class="signup-content">
+            <center>
+              <div class="signup-form">
+                <form style="width: 100%" action="/register" method="POST">
+                  <div class="inner-addon left-addon form-gruoup">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <input
+                    class="form-control"
+                    placeholder="E-mail"
+                    type="text"
+                    name="email"
+                    placeholder="Email address"
+                    id="edd-email"
+                    value=""
+                    />
+                  </div>
+                  <div class="inner-addon left-addon form-gruoup">
+                    <i class="glyphicon glyphicon-envelope"></i>
+                    <input
+                      class="form-control"
+                      placeholder="Username"
+                      type="text"
+                      name="username"
+                      placeholder="Username"
+                      id="username"
+                      value=""
+                    />
+                  </div>
+                  <div class="inner-addon left-addon form-gruoup">
+                    <i class="glyphicon glyphicon-lock"></i>
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Password"
+                      name="password"
+                    />
+                  </div>
+                
+                  <input
+                    class="btn btn-primary btn-border-radius btn-lg"
+                    type="submit"
+                    id="edd-purchase-button"
+                    name="edd-purchase"
+                    value="Register"
+                    style="margin-top: 40px"
+                  />
+                </form>
+              </div>
+            </center>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
