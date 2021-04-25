@@ -25,11 +25,27 @@ def get_allCar():
 def index():
     return render_template("index.html")
 
+@app.route("/contact")
+def contact():
+    if 'email' in session:
+        ses =  'You are logged in as ' + session['email']
+    return render_template("contact.html",ses=ses)
+
 @app.route("/menu")
 def menu():
     if 'email' in session:
         ses =  'You are logged in as ' + session['email']
     return render_template("menu.html" , ses = ses)
+
+@app.route('/insertcontact', methods=['POST'])
+def insertcontact():
+  char = db.contact
+  cname = request.form['cname'] 
+  cemail = request.form['cemail']
+  cmessage = request.form['cmessage']
+
+  char.insert_one({ 'cname' : cname, 'cemail' : cemail, 'cmessage': cmessage})
+  return render_template('contact.html')
 
 @app.route("/Register")
 def Register():
