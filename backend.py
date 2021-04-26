@@ -7,7 +7,8 @@ from bson.objectid import ObjectId
 from bson import json_util
 
 app = Flask(__name__)
-client = pymongo.MongoClient("mongodb://admin:VIDgnh48123@node12713-project.app.ruk-com.cloud:11012") 
+client = pymongo.MongoClient("mongodb://admin:NSOtqh59246@node13008-atiwat-01-clone133880.app.ruk-com.cloud:11027") 
+
 db = client["project"] 
 app.secret_key = 'super secret key'
 app.config['SESSION_TYPE'] = 'filesystem'
