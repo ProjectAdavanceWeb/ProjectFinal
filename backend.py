@@ -7,8 +7,8 @@ from bson.objectid import ObjectId
 from bson import json_util
 
 app = Flask(__name__)
-# client = pymongo.MongoClient("mongodb://admin:NSOtqh59246@node13008-atiwat-01-clone133880.app.ruk-com.cloud:11027") 
-client = pymongo.MongoClient("mongodb://admin:NSOtqh59246@10.100.2.64") #runoncloud
+client = pymongo.MongoClient("mongodb://admin:NSOtqh59246@node13008-atiwat-01-clone133880.app.ruk-com.cloud:11027") 
+#client = pymongo.MongoClient("mongodb://admin:NSOtqh59246@10.100.2.64") #runoncloud
 
 db = client["project"] 
 app.secret_key = 'super secret key'
@@ -36,10 +36,10 @@ def contact():
 # ############################################################################################
 @app.route("/showdata")
 def showdata():
-    profile_list = db.customer.find()
     if 'email' in session:
         ses =  'You are logged in as ' + session['email']
-    return render_template("showdata.html",ses=ses, profile_list = profile_list)
+        data = session['email'] + session['username'] + session['password'] + session['phone'] + session['address'] 
+    return render_template("showdata.html",ses=ses, data = data)
 # ####################################################################################
 
 @app.route("/admincontact")
@@ -93,13 +93,18 @@ def loginBackend():
             session['email'] = request.form['email']
             return redirect(url_for('admincontact'))
 
-    if login_user:
+    elif login_user:
         email_val = login_user['email']
         passwordcheck = login_user['password']
 
         if bcrypt.checkpw(password.encode('utf-8'),passwordcheck):
             session['email'] = request.form['email']
+            session['username'] = request.form['username']
+            session['password'] = request.form['password']
+            session['phone'] = request.form['phone']
+            session['address'] = request.form['address']
             return redirect(url_for('menu'))
+        return render_template('index.html')    
     else : 
         return render_template('index.html')
 

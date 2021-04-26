@@ -38,11 +38,13 @@
     <div class="container-fluid" style="padding-top: 3rem;">
       <div class="meal-wrapper">
         <div id="ongrid">
-            {% for emp in profile_list %}
-            <div class="card"  data-id="{{ emp['cname'] }}">
-                <h4 class="card-title">Username : {{ emp['username'] }}</h4>
-                <h4 class="card-title">Email : {{ emp['password'] }}</h4>
-                <h4 class="card-title">Message : {{ emp['email'] }}</h4>
+            {% for data in data %}
+            <div class="card"  data-id="{{ data['username'] }}">
+                <h4 class="card-title">Username : {{ data['username'] }}</h4>
+                <h4 class="card-title">Email : {{ data['password'] }}</h4>
+                <h4 class="card-title">Message : {{ data['email'] }}</h4>
+                <h4 class="card-title">Message : {{ data['address'] }}</h4>
+                <h4 class="card-title">Message : {{ data['phone'] }}</h4>
             </div>
             {% endfor %}
         </div>
