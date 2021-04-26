@@ -105,7 +105,9 @@ def register():
         if existing_user is None:
             hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
             emaila = request.form['email']
-            users.insert_one({'username' : request.form['username'], 'password' : hashpass , 'email':emaila})
+            phone = request.form['phone']
+            address = request.form['address']
+            users.insert_one({'username' : request.form['username'], 'password' : hashpass , 'email':emaila, 'phone':phone, 'address':address })
             session['email'] = request.form['email']
             return redirect(url_for('index'))
         
