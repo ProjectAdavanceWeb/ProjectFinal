@@ -85,6 +85,14 @@ def loginBackend():
     password = request.form.get("password")
     login_user = users.find_one({'email': request.form['email']})
 
+    if email == "admin":
+        email_val = login_user['email']
+        passwordcheck = login_user['password']
+
+        if bcrypt.checkpw(password.encode('utf-8'),passwordcheck):
+            session['email'] = request.form['email']
+            return redirect(url_for('admincontact'))
+
     if login_user:
         email_val = login_user['email']
         passwordcheck = login_user['password']
@@ -92,8 +100,8 @@ def loginBackend():
         if bcrypt.checkpw(password.encode('utf-8'),passwordcheck):
             session['email'] = request.form['email']
             return redirect(url_for('menu'))
-
-    return render_template('index.html')
+    else : 
+        return render_template('index.html')
 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
