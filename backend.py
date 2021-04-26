@@ -7,14 +7,14 @@ from bson.objectid import ObjectId
 from bson import json_util
 
 app = Flask(__name__)
-# client = pymongo.MongoClient("mongodb://admin:NSOtqh59246@node13008-atiwat-01-clone133880.app.ruk-com.cloud:11027") 
-client = pymongo.MongoClient("mongodb://admin:NSOtqh59246@10.100.2.64") #runoncloud
+client = pymongo.MongoClient("mongodb://admin:NSOtqh59246@node13008-atiwat-01-clone133880.app.ruk-com.cloud:11027") 
+#client = pymongo.MongoClient("mongodb://admin:NSOtqh59246@10.100.2.64") #runoncloud
 
 db = client["project"] 
 app.secret_key = 'super secret key'
 app.config['SESSION_TYPE'] = 'filesystem'
 
-@app.route("/Car", methods=['GET','POST','PUT'])
+@app.route("/showuser", methods=['GET','POST','PUT'])
 def get_allCar():
     char = db.customer #เป็นเหมือนการนำค่าชื่อหัวตารางมาใส่ในตัวแปร char
     output = []
