@@ -24,7 +24,7 @@ def get_allCar():
 
 @app.route("/")
 def index():
-    return render_template("menu.html")
+    return render_template("index.html")
 
 @app.route("/contact")
 def contact():
