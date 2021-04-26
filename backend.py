@@ -80,7 +80,7 @@ def loginBackend():
 
         if bcrypt.checkpw(password.encode('utf-8'),passwordcheck):
             session['email'] = request.form['email']
-            return redirect(url_for('menu'))
+            return redirect(url_for('menu.html'))
 
     return render_template('index.html')
 
