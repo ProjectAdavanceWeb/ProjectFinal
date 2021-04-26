@@ -40,10 +40,11 @@
       <div class="meal-wrapper">
         <div id="ongrid">
             {% for emp in emp_list %}
-            <div class="card"  data-id="{{ emp['cname'] }}">
+            <div class="card"  data-id="{{ emp['username'] }}">
                 <h4 class="card-title">Username : {{ emp['username'] }}</h4>
                 <h4 class="card-title">Email : {{ emp['email'] }}</h4>
                 <!-- <h4 class="card-title">Password : </h3><h6>{{ emp['password'] }}</h6> -->
+                <a href="./delete?username={{ emp['username'] }}"onclick="return confirm('Are You Sure To Delete ?')"><button type="submit">Delete</button></a>
             </div>
             {% endfor %}
         </div>

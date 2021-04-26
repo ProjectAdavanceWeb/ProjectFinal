@@ -56,6 +56,13 @@ def admincustomer():
         ses =  'You are logged in as ' + session['email']
     return render_template("AdminCustomer.html",ses=ses , emp_list = emp_list)
 
+@app.route('/delete')
+def delete():
+    char = db.customer
+    key = request.values.get("username")
+    char.remove({"username": key})
+    return redirect("/admincustomer")
+
 
 @app.route("/menu")
 def menu():
@@ -93,16 +100,18 @@ def loginBackend():
             session['email'] = request.form['email']
             return redirect(url_for('admincontact'))
 
+        return render_template("index.html")
+
     elif login_user:
         email_val = login_user['email']
         passwordcheck = login_user['password']
 
         if bcrypt.checkpw(password.encode('utf-8'),passwordcheck):
             session['email'] = request.form['email']
-            session['username'] = request.form['username']
-            session['password'] = request.form['password']
-            session['phone'] = request.form['phone']
-            session['address'] = request.form['address']
+            # session['username'] = request.form['username']
+            # session['password'] = request.form['password']
+            # session['phone'] = request.form['phone']
+            # session['address'] = request.form['address']
             return redirect(url_for('menu'))
         return render_template('index.html')    
     else : 
