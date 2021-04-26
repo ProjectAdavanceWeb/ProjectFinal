@@ -27,26 +27,35 @@
     </nav>
     <div class="container">
       <div class="row" style="padding-top: 10rem;">
-        <h2 class="text-center"><strong>Admin Contact</strong></h2>
+        <h2 class="text-center"><strong>Admin Homepage</strong></h2>
       </div>
     </div>
     <div class="row" style="padding-top: 4rem;">
-      <h3 class="text-center"><strong>Contact from customer</strong></h3>
+      <h3 class="text-center"><strong>Welcome back Admin</strong></h3>
     </div>
     <div id="meal">
 
     </div>
     <div class="container-fluid" style="padding-top: 3rem;">
       <div class="meal-wrapper">
-        <div id="ongrid">
-            {% for emp in emp_list %}
-            <div class="card"  data-id="{{ emp['cname'] }}">
-                <h4 class="card-title">Username : {{ emp['cname'] }}</h4>
-                <h4 class="card-title">Email : {{ emp['cemail'] }}</h4>
-                <h4 class="card-title">Message : {{ emp['cmessage'] }}</h4>
-            </div>
-            {% endfor %}
-        </div>
+        
+            <a href="/admincontact"
+                    class="btn btn-primary btn-border-radius btn-lg"
+                    type="submit"
+                    id="edd-purchase-button"
+                    name="edd-purchase"
+                    value="Login"
+                    style="margin-top: 40px">Admin Contact
+            </a>
+            <a href="/admincustomer"
+                    class="btn btn-primary btn-border-radius btn-lg"
+                    type="submit"
+                    id="edd-purchase-button"
+                    name="edd-purchase"
+                    value="Login"
+                    style="margin-top: 40px">Admin Customer
+            </a>
+        
       </div>
     </div>
   </div>

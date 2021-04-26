@@ -7,8 +7,8 @@ from bson.objectid import ObjectId
 from bson import json_util
 
 app = Flask(__name__)
-client = pymongo.MongoClient("mongodb://admin:NSOtqh59246@node13008-atiwat-01-clone133880.app.ruk-com.cloud:11027") 
-#client = pymongo.MongoClient("mongodb://admin:NSOtqh59246@10.100.2.64") #runoncloud
+# client = pymongo.MongoClient("mongodb://admin:NSOtqh59246@node13008-atiwat-01-clone133880.app.ruk-com.cloud:11027") 
+client = pymongo.MongoClient("mongodb://admin:NSOtqh59246@10.100.2.64") #runoncloud
 
 db = client["project"] 
 app.secret_key = 'super secret key'
@@ -48,6 +48,12 @@ def admincontact():
     if 'email' in session:
         ses =  'You are logged in as ' + session['email']
     return render_template("AdminContact.html",ses=ses , emp_list = emp_list)
+
+@app.route("/adminhome")
+def adminhome():
+    if 'email' in session:
+        ses =  'You are logged in as ' + session['email']
+    return render_template("AdminHome.html",ses=ses )
 
 @app.route("/admincustomer")
 def admincustomer():
@@ -98,7 +104,7 @@ def loginBackend():
 
         if bcrypt.checkpw(password.encode('utf-8'),passwordcheck):
             session['email'] = request.form['email']
-            return redirect(url_for('admincontact'))
+            return redirect(url_for('adminhome'))
 
         return render_template("index.html")
 
