@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Meal For Your Ingredients</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <link rel = "stylesheet" href = "css/web.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  {% include 'MainCSJS.html' %}
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">MichLean</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">{{ ses }}</a></li>
+          <li><a href="/menu"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+          <li><a href="/contact"><span class="glyphicon glyphicon-edit"></span> Contact</a></li>
+          <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row" style="padding-top: 10rem;">
+        <h2 class="text-center"><strong>Admin Contact</strong></h2>
+      </div>
+    </div>
+    <div class="row" style="padding-top: 4rem;">
+      <h3 class="text-center"><strong>Contact from customer</strong></h3>
+    </div>
+    <div id="meal">
+
+    </div>
+    <div class="container-fluid" style="padding-top: 3rem;">
+      <div class="meal-wrapper">
+        <div id="ongrid">
+            {% for emp in profile_list %}
+            <div class="card"  data-id="{{ emp['cname'] }}">
+                <h4 class="card-title">Username : {{ emp['username'] }}</h4>
+                <h4 class="card-title">Email : {{ emp['password'] }}</h4>
+                <h4 class="card-title">Message : {{ emp['email'] }}</h4>
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="DesModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-header">
+        </div>
+      </div
+
+  <script src="/static/js/bootstrap.min.js"></script>
+  <script src="/static/js/jquery-1.12.4.min.js"></script>
+  <script src = "/static/js/test.js"></script>
+</body>
+</html>
