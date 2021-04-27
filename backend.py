@@ -44,7 +44,7 @@ def showdata():
 
 @app.route("/admincontact")
 def admincontact():
-    emp_list = db.contact.find()
+    emp_list = db.contact.find() #connect ดึงข้อมูลจากdatabase ใส่ในตัวแปล
     if 'email' in session:
         ses =  'You are logged in as ' + session['email']
     return render_template("AdminContact.html",ses=ses , emp_list = emp_list)
